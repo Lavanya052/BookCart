@@ -1,0 +1,19 @@
+<!--<div class="container">
+    <br><br><br>
+        <div class="box-container">
+      
+            <ng-container *ngFor="let singlebook of Books">
+                <app-shop [shopProducts]="singlebook"></app-shop> 
+            </ng-container>
+      
+        </div>
+      
+      </div>
+    -->
+<div class="box">
+    <img [src]="book.image" [alt]="book.name"><br><br>
+    <h4>{{ book.name | titlecase }}</h4>
+    <h5>{{ book.author | titlecase }}</h5><br>
+    <p>Price: {{ book.price | currency:'INR' }}</p>
+    <a (click)="viewBook()" class="btn">View Details</a>
+</div>

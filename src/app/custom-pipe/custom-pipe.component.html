@@ -1,0 +1,13 @@
+<div class="pipe">
+    <h1> Custom Pipes</h1>
+    
+      <p>Original Text:{{Text}}</p>
+      <p>--------------------------</p>
+      <p>LOWER CASE- {{ Text |custPipe:'toLowerCase' }}</p>
+      <p>UPPER CASE- {{ Text | custPipe:'toUpperCase' }}</p>
+      <p>REVERSE- {{ Text | custPipe:'reverse' }}</p>
+      <p>COUNT WORDS- {{ Text | custPipe:'countWords' }}</p>
+      <p>CAPITALIZE- {{ Text | custPipe:'capitalize' }}</p>
+      <p>TRUNCATE: {{ Text | custPipe:'truncate':10 }}</p>
+
+  </div>

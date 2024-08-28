@@ -1,0 +1,26 @@
+<!--
+<div class="container">
+    <br><br><br>
+        <div class="box-container">
+            <div class="box"  *ngFor="let item of shopProducts">
+                <img src="{{item.image}}" [alt]="item.name">
+                <h4>{{item.name | titlecase}}</h4>
+                <h5>{{item.author | titlecase}}</h5><br>
+                <p>Price: {{item.price | currency:'INR'}}</p>
+                <a routerLink="/product-details/{{item.id}}" class="btn">View Details</a>
+            
+            </div>
+            
+        </div>
+      
+      </div>-->
+
+<div class="container">
+    <h1>Home</h1>
+    <br><br>
+    <div class="box-container">
+        <div  *ngFor="let book of shopProducts">
+            <app-book [book]="book" (viewClicked)="Book($event)"></app-book>
+        </div>
+    </div>
+</div>

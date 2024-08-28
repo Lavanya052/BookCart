@@ -1,0 +1,39 @@
+<nav class="nav" [ngSwitch]="userRole">
+    <h1 class="shopname"
+        [routerLink]="userRole === 'default' ? '/' : userRole === 'customer' ? '/customer' : '/seller'">
+        <i class="fa fa-book"></i>&nbsp; &nbsp;Book Mart
+        <i class="fa fa-home" aria-hidden="true"></i>
+    </h1>
+    <ul *ngSwitchCase="'default'" class="default">
+        <li class="dropbtn" (click)="customer()" style="color:rgb(2, 2, 2);font-weight: bold;"><i class="fa fa-user"
+                aria-hidden="true"></i><a>&nbsp;Customer</a></li>
+        <li class="dropbtn" (click)="seller()" style="color:rgb(17, 18, 18);font-weight: bold;"><i class="fa fa-user"
+                aria-hidden="true"></i><a>&nbsp; &nbsp;Seller</a></li>
+        <li (click)="isAuth()"><i class="fa fa-shopping-cart"></i><a title="login through email"
+                style="text-decoration: none;">&nbsp;<sup>{{cartCount}}</sup></a></li>
+        <li routerLink="/search"><i class="fa fa-search" aria-hidden="true"></i> <a>Search</a></li>
+        <li routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> <a>Login</a></li>
+        <li routerLink="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> <a>Register</a></li>
+    </ul>
+    <ul *ngSwitchCase="'customer'" class="user">
+        <li class="dropbtn" style="color:rgb(101, 213, 240);font-weight: bold;"><i class="fa fa-user"
+                aria-hidden="true"></i><a>&nbsp;Customer</a></li>
+        <li class="dropbtn" (click)="seller()" style="color:rgb(17, 18, 18);font-weight: bold;"><i class="fa fa-user"
+                aria-hidden="true"></i><a>&nbsp; &nbsp;Seller</a></li>
+        <li routerLink="/cart"><i class="fa fa-shopping-cart"></i>&nbsp;<sup>{{cartCount}}</sup></li>
+        <li routerLink="/customer/search"><i class="fa fa-search" aria-hidden="true"></i> Search</li>
+        <li (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>LogOut</li>
+
+
+    </ul>
+    <ul *ngSwitchCase="'seller'" class="user">
+        <li class="dropbtn" (click)="customer()" style="color:rgb(2, 2, 2);font-weight: bold;"><i class="fa fa-user"
+                aria-hidden="true"></i><a>&nbsp;Customer</a></li>
+        <li class="dropbtn" routerLink="/seller/update" style="color:rgb(101, 213, 240);font-weight: bold;"><i
+                class="fa fa-user" aria-hidden="true"></i><a>&nbsp; &nbsp;Seller</a></li>
+        <li routerLink="/seller/search"><i class="fa fa-search" aria-hidden="true"></i> Search</li>
+        <li routerLink="/seller/add"><i class="fa fa-plus" aria-hidden="true"></i>Add</li>
+        <li (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>LogOut</li>
+
+    </ul>
+</nav>

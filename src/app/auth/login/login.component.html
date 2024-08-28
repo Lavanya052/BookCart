@@ -1,0 +1,52 @@
+<div class="overlay">
+    <form (ngSubmit)="submit()">
+        <div class="con">
+            <header class="head-form">
+                <h2>Log In</h2>
+            </header>
+            <br><br>
+
+            <div class="field-set">
+                <!-- User Type -->
+                <div class="input-item"><i class="fa fa-user"></i>
+                    <select class="form-input"  [(ngModel)]="form.userType"  #userType="ngModel" name="userType" id="userType" required >
+                        <option value="" disabled selected style="color: #999; opacity: 0.2;">Enter user</option>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+                </div>
+                <div class="error" *ngIf="userType.invalid && (userType.touched || userType.dirty)">Enter valid user</div>
+
+                <!-- Email -->
+                <div class="input-item"> <i class="fa fa-envelope"></i>
+                    <input class="form-input" id="txt-input" [(ngModel)]="form.email" #email="ngModel" type="email"
+                        placeholder="Email" name="email" required>
+                </div>
+
+                <div class="error" *ngIf="email.invalid && (email.touched || email.dirty)">Enter user</div>
+
+                <!-- Password -->
+                <div class="input-item"> <i class="fa fa-key"></i>
+                    <input class="form-input" [(ngModel)]="form.password" #password="ngModel"
+                        type="{{ hidePassword ? 'password' : 'text' }}" placeholder="Password" id="pwd" name="password"
+                        required>
+                </div>
+                <span *ngIf="hidePassword"><i class="fa fa-eye-slash" type="button" id="eye"
+                        (click)="togglePasswordVisibility()"></i></span>
+                <span *ngIf="!hidePassword"><i class="fa fa-eye" type="button" id="eye"
+                        (click)="togglePasswordVisibility()"></i></span>
+
+                <div class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Enter valid Password
+                </div>
+
+                <!--buttons-->
+                <button class="log-in" >
+                    <ng-container *ngIf="isLoading()">Loading...</ng-container>
+                    <ng-container *ngIf="!isLoading()">Log In</ng-container>
+                </button>
+                <button class="sign-up" routerLink="/register">Sign Up<i class="fa fa-user-plus"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </form>
+</div>

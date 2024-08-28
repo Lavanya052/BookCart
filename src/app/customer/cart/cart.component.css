@@ -1,0 +1,176 @@
+
+
+body {
+  font-family:  Arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  color: #414141;
+  font-size: 30px;
+  background: #caccf7;
+  padding: 25px 0;
+}
+
+
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+h1 {
+  /* font-family: 'Fredoka One', Helvetica, Tahoma, sans-serif; */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: purple;
+  text-shadow: 1px 2px 0 #7184d8;
+  font-size: 3.5em;
+  line-height: 1.1em;
+  padding: 6px 0;
+  /* font-weight: normal; */
+  text-align: center;
+  
+}
+
+
+/* page structure */
+#w {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#title {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+/** cart table **/
+#cart {
+  display: block;
+  margin:0;
+  width: 100%;
+  font-size: 1.2em;
+  color: #414141; /* Text color */
+  background-color: #fff;/* Collapse borders between cells */
+  border-spacing: 0; /* No spacing between cells */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+#cart thead th {
+  padding: 30px 15px; /* Increase padding for header cells */
+  font-weight: bold;
+  text-align: center; /* Align header text to the left */
+  border-bottom: 2px solid #ddd; /* Add a bottom border */
+}
+#cart thead th.first {
+  width: 30px;
+}
+#cart thead th.second {
+  width: 185px;
+}
+#cart thead th.third {
+  width: 120px;
+}
+#cart thead th.fourth {
+  width: 13px;
+}
+#cart thead th.fifth {
+  width: 13px;
+}
+#cart thead th.sixth {
+  width: 20px;
+}
+
+#cart tbody td {
+  padding: 1px 3px; /* Increase padding for body cells */
+  text-align: center;
+  font-size: medium;
+}
+
+tr.productitm {
+  height: 65px;
+  line-height: 65px;
+  border-bottom: 1px solid #d7dbe0;
+}
+
+
+#cart tbody td img.thumb {
+  vertical-align: bottom;
+  width: 80px; /* Set the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Adjust margin as needed */
+  margin-top: 10px; 
+}
+
+
+tr.totalprice, tr.extracosts {
+  height: 35px;
+  line-height: 35px;
+}
+
+.remove {
+  /* http://findicons.com/icon/261449/trash_can?id=397422 */
+  cursor: pointer;
+  position: relative;
+  right: 12px;
+  top: 5px;
+}
+
+
+.light {
+  color: white;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.45);
+  font-size: 1.1em;
+  font-weight: normal;
+}
+.thick {
+  color: #272727;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+
+td.checkout {
+  padding: 12px 0;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* https://codepen.io/guvootes/pen/eyDAb */
+#submitbtn {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  margin: 0 0 10px 10px;
+  font-size: 1.3em;
+  font-family:Arial, sans-serif;
+  color: #fff;
+  cursor: pointer;
+  background-color:#338eff;
+  padding-top: 4px;
+}
+#submitbtn:hover {
+  background-image: linear-gradient(#338eff, #235088);
+}
+#submitbtn:active {
+  border-bottom: 0;
+  background-image: linear-gradient(#338eff, #274468);
+}
+.quantity-group{
+  margin-top: 20px;
+  margin-left: 30%;
+}
+
+.quantity-group button{
+  padding: 10px;
+  background-color: rgb(166, 79, 210);
+  cursor: pointer;
+}
+.quantity-group input{
+  padding: 10px;
+  width: 35px;
+  border: solid 1px rgb(0, 0, 0);
+}
+

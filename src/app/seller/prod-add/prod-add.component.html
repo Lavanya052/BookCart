@@ -1,0 +1,42 @@
+<div class="seller-page">
+    <h2>Add New Book</h2>
+  
+    <form (submit)="addBook()">
+
+        <div class="form-group">
+            <label for="Id">Book Id:</label>
+            <input type="text" id="id" name="id" [(ngModel)]="newBook.id" required>
+          </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="newBook.name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" [(ngModel)]="newBook.author" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" [(ngModel)]="newBook.image" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" [(ngModel)]="newBook.price" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="categories">Category:</label>
+        <input type="text" id="categories" name="categories" [(ngModel)]="newBook.categories" required>
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <textarea type="text" id="desc" name="desc" [(ngModel)]="newBook.desc" required rows="3" cols="80"> </textarea>
+      </div>
+      
+      <button type="submit">Add Book</button>
+    </form>
+  </div>
+  

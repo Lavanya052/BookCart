@@ -1,0 +1,35 @@
+<div>
+  <h2>Search</h2>
+
+  <form (ngSubmit)="search()">
+    <div>
+      <label for="authorName">Author Name:</label>
+      <input type="text" id="authorName" [(ngModel)]="authorName" name="authorName">
+    </div>
+    <div>
+      <label for="bookName">Book Name:</label>
+      <input type="text" id="bookName" [(ngModel)]="bookName" name="bookName">
+    </div>
+    <button type="submit">Search</button>
+  </form>
+
+  <div *ngIf="filteredBooks.length > 0" class="container">
+    <h2>Search Results</h2>
+    <div class="box-container">
+      <div *ngFor="let book of filteredBooks" class="box">
+        <img [src]="book.image" width="50px" alt="" class="image-thumbnail" (click)="redirectToProductDetail(book.id)">
+        <p class="name">{{book.name}}</p>
+        <p>By {{book.author}}</p>
+        <p>{{book.price | currency:"INR"}}</p>
+      </div>
+    </div>
+   
+  </div>
+
+  <div class="error" *ngIf="searchPerformed && filteredBooks.length === 0">
+    OOPS! No match :(
+  </div>
+  <div class="notification" *ngIf="filteredBooks.length > 0">
+    <p>Click book to read description</p>
+  </div>
+</div>

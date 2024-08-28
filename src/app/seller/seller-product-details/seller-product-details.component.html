@@ -1,0 +1,21 @@
+<div class="container">
+
+    <h1 class="heading">{{productDetails?.name}}</h1>
+  
+    <div class="box-container">
+  
+        <div class="box">
+            <img src="{{productDetails?.image}}" alt="">
+            <h2>Price:  {{productDetails?.price | currency:"INR"}}</h2>
+            
+            <p><b>Category:</b> {{productDetails?.categories}}</p>
+            <p><b>Description:</b> {{productDetails?.desc}}</p>
+            <div>
+                <a routerLink="/seller"  class="btn">Books</a>
+            </div>
+        </div>
+  
+    </div>
+  
+  </div>
+  

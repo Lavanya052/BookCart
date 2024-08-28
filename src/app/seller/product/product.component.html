@@ -1,0 +1,88 @@
+<div class="seller-page">
+  <h2>Manage Books</h2>
+  <form (ngSubmit)="search()">
+    <div>
+      <label for="bookId">Book Id:</label>
+      <input type="text" id="bookName" [(ngModel)]="bookId" name="bookId">
+    </div>
+    <button type="submit">Search</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let book of filteredBooks">
+        <tr>
+          <td>{{ book.id }}</td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editTitle">
+              {{ book.name }}
+            </ng-container>
+            <ng-template #editTitle>
+              <input type="text" [(ngModel)]="book.name">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editAuthor">
+              {{ book.author }}
+            </ng-container>
+            <ng-template #editAuthor>
+              <input type="text" [(ngModel)]="book.author">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editImage">
+              <img [src]="book.image" [alt]="book.name" (click)="redirectToProductDetail(book.id)">
+            </ng-container>
+            <ng-template #editImage>
+              <input type="text" [(ngModel)]="book.image">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editPrice">
+              {{ book.price | currency: 'INR' }}
+            </ng-container>
+            <ng-template #editPrice>
+              <input type="number" [(ngModel)]="book.price">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editCategory">
+              {{ book.categories }}
+            </ng-container>
+            <ng-template #editCategory>
+              <input type="text" [(ngModel)]="book.categories">
+            </ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="!editedBook || editedBook.id !== book.id; else editDesc">
+              {{ book.desc }}
+            </ng-container>
+            <ng-template #editDesc>
+              <textarea rows="4" cols="50" [(ngModel)]="book.desc"></textarea>
+            </ng-template>
+          </td>
+          <td>
+            <button *ngIf="!editedBook || editedBook.id !== book.id" (click)="editBook(book)" class="edit-mode">Edit</button><br><br>
+            <button *ngIf="!editedBook || editedBook.id !== book.id" (click)="deleteBook(book.id)" class="delete-mode">Delete</button>
+            <button *ngIf="editedBook && editedBook.id === book.id" (click)="saveBook(book)" class="save-mode">Save</button><br><br>
+            <button *ngIf="editedBook && editedBook.id === book.id" (click)="cancelEdit(book)" class="cancel-mode">Cancel</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<div class="error" *ngIf="filteredBooks.length === 0">
+  OOPS! No match :(
+</div>

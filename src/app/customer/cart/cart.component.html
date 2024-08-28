@@ -1,0 +1,58 @@
+<div id="w">
+    <header id="title">
+      <h1>Cart</h1>
+    </header>
+
+      <table id="cart">
+        <thead>
+          <tr>
+            <th class="first">Image</th>
+            <th class="second">Product</th>
+            <th class="third">Qty</th>
+            <th class="fourth">Price</th>
+            <th class="fifth">Total</th>
+            <th class="sixth">&nbsp;Action </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!-- shopping cart contents -->
+          <tr class="productitm" *ngFor="let item of cart">
+            <td><img src="{{item.image}}" class="thumb"></td>
+            <td>{{item.name  | titlecase}} </td>
+            <div class="quantity-group">
+              <button (click)="handleQuantity('min',item)">-</button>
+              <input type="text" value="{{item.quantity}}">
+              <button (click)="handleQuantity('plus',item)">+</button>
+          </div>
+            <td>{{item.price | currency:"INR"}}</td>
+            <td>{{item.quantity * item.price | currency:"INR"}}</td>
+            <td (click)="removeFromCart(item)"><span class="remove"><img src="https://i.imgur.com/h1ldGRr.png" alt="X"></span></td>
+          </tr>
+
+          
+          
+          <!-- tax + subtotal -->
+         <!-- <tr class="extracosts">
+            <td class="light">Shipping &amp; Tax</td>
+            <td colspan="2" class="light"></td>
+            <td style="color: wheat;">$ {{this.priceSummary.tax + this.priceSummary.delivery}}</td>
+            <td>&nbsp;</td>
+          </tr>-->
+          <tr class="totalprice">
+            <td class="light">Total:</td>
+            <td colspan="3"></td>
+            <td colspan="1"><span class="thick"> {{this.totalPrice | currency:"INR"}}</span></td>
+          </tr>
+          
+          <!-- checkout btn -->
+
+          <tr class="checkoutrow">
+            <td colspan="5" class="checkout">
+              <button routerLink="/customer" class="checkout-btn" id="submitbtn">Continue Shopping</button>
+              <button (click)="checkoutCart()" class="checkout-btn" id="submitbtn">Checkout Now!</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

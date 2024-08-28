@@ -1,0 +1,42 @@
+<div class="overlay">
+   <form (ngSubmit)="submit()"> <!--form start-->
+      <div class="con">
+         <header class="head-form"><h2>Register</h2></header>
+         <br>
+         
+         <div class="field-set">
+            <!--Email-->
+            <div class="input-item"> <i class="fa fa-envelope"></i>
+            <input class="form-input" id="txt-input" [(ngModel)]="form.email" #email="ngModel" type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="error" *ngIf="email.invalid && (email.touched || email.dirty)">Enter valid email</div> 
+
+
+             <!--Password-->
+            <div class="input-item"> <i class="fa fa-key"></i>
+            <input class="form-input"  [(ngModel)]="form.password" #password="ngModel" type="{{ hidePassword ? 'password' : 'text' }}" placeholder="Password" id="pwd"  name="password" required></div>
+            <span *ngIf="hidePassword"><i class="fa fa-eye-slash" type="button" id="eye" (click)="togglePasswordVisibility()"></i></span>
+            <span *ngIf="!hidePassword"><i class="fa fa-eye" type="button" id="eye" (click)="togglePasswordVisibility()"></i></span>
+
+            <div class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Enter valid password</div>
+
+
+            <!--ConformPassword-->
+            <div class="input-item"> <i class="fa fa-key"></i> 
+            <input class="form-input"  [(ngModel)]="form.confirm_password" #confirm_password="ngModel"type="{{ hideCurPassword ? 'password' : 'text' }}" placeholder="Confirm_Password" id="pwd1" name="password1" required></div>
+            <span *ngIf="hideCurPassword"><i class="fa fa-eye-slash" type="button" id="eye1" (click)="togglePasswordVisibility1()"></i></span>
+            <span *ngIf="!hideCurPassword"><i class="fa fa-eye" type="button" id="eye1" (click)="togglePasswordVisibility1()"></i></span>
+            
+            <div class="error" *ngIf="confirm_password.invalid && (confirm_password.touched || confirm_password.dirty)">Enter valid confirm_password</div>
+
+            <div *ngIf="registrationSuccessful" class="success-message">
+               Registration successful! You can now login.
+             </div>
+            <!--buttons-->
+            <button class="register" > Register </button>
+            <button class="sign-in " routerLink="/login">Sign-In<i class="fa fa-sign-in"></i></button>
+         </div>
+      </div>
+   </form>
+
+</div>

@@ -1,0 +1,174 @@
+
+*{
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container{
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color: rgb(129, 9, 129);
+    font-size: 50px;
+}
+
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap:15px;
+}
+
+.container .box-container .box {
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding:30px 20px;
+}
+
+.container .box-container .box  img{
+  height: 100px;
+  cursor: pointer;
+}
+
+.container .box-container .box  p{
+  color:#190303;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.container .box-container .box  .btn{
+  margin-top: 10px;
+  display: inline-block;
+  background:#333;
+  color:#fff;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 8px 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100px; 
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 200px; 
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; 
+}
+
+h2{
+  text-align: center;
+  padding: 10px;
+  color: purple;
+  font-size: 35px;
+}
+
+.error {
+  color: rgb(0, 34, 255);
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+
+.container .box-container .box .name {
+  font-weight: bolder;
+}
+
+.container .box-container .box .image-thumbnail{
+  width: 120px;
+  height: 100px;
+}
+
+.notification {
+  position: fixed; 
+  bottom: 30px; 
+  left: 50%; 
+  background-color: #223eb9; 
+  color: #d9dae3; 
+  padding: 10px; 
+  border: 1px solid #f5c6cb; 
+  border-radius: 10px; 
+}
+
+.seller-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+

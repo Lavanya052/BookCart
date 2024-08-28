@@ -1,0 +1,149 @@
+
+
+*{
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+.container{
+    /* background:linear-gradient(45deg, blueviolet, lightgreen); */
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color: rgb(129, 9, 129);
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 50px;
+}
+
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap:15px;
+}
+
+.container .box-container .box {
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding:30px 20px;
+}
+
+.container .box-container .box  img{
+  height: 100px;
+  cursor: pointer;
+}
+
+/*.container .box-container .box h4{
+  color:#444;
+  font-size: 22px;
+  padding:10px 0;
+}*/
+
+.container .box-container .box  p{
+  color:#190303;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.container .box-container .box  .btn{
+  margin-top: 10px;
+  display: inline-block;
+  background:#333;
+  color:#fff;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 8px 25px;
+}
+
+
+@media (max-width:768px){
+    .container{
+        padding:20px;
+    }
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100px; /* Adjust as needed */
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 200px; /* Adjust as needed */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 8px 20px;
+  background-color: #007bff; /* Change to your desired color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Change to your desired color */
+}
+
+h2{
+  text-align: center;
+  padding: 10px;
+  color: purple;
+  font-size: 35px;
+}
+
+.error {
+  color: rgb(0, 34, 255);
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+
+.container .box-container .box .name {
+  font-weight: bolder;
+}
+
+.container .box-container .box .image-thumbnail{
+  width: 120px;
+  height: 100px;
+}
+
+.notification {
+  position: fixed; /* Position fixed */
+  bottom: 30px; /* Distance from the bottom of the viewport */
+  left: 50%; /* Horizontal center */
+  transform: translateX(-50%); /* Move it back by half of its width */
+  background-color: #223eb9; /* Background color */
+  color: #d9dae3; /* Text color */
+  padding: 10px; /* Padding around the content */
+  border: 1px solid #f5c6cb; /* Border */
+  border-radius: 10px; /* Rounded corners */
+}
